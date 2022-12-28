@@ -1,12 +1,12 @@
 <sub>**This work was done as part of the Course work by Author: Abdyukov Z.M. **</sub> 
 <h3>Content</h3>
 
-[Brief introduction](https://github.com/StrongerProgrammer7/SmartContractPatients/edit/main/README.md#optimization-contract)  
-[Development tools and Programming Language](https://github.com/StrongerProgrammer7/SmartContractPatients/edit/main/README.md#development-tools-and-programming-language)  
-[Prototype architecture](https://github.com/StrongerProgrammer7/SmartContractPatients/edit/main/README.md#prototype-architecture)  
-[Optimization contract](https://github.com/StrongerProgrammer7/SmartContractPatients/edit/main/README.md#optimization-contract)  
-[Some problem and TODO:](https://github.com/StrongerProgrammer7/SmartContractPatients/edit/main/README.md#some-problem-and-todo)  
-[View Prototype](https://github.com/StrongerProgrammer7/SmartContractPatients/edit/main/README.md#-view-prototype-)  
+[Brief introduction](https://github.com/StrongerProgrammer7/SmartContractPatients/blob/main/README.md#-brief-introduction-)  
+[Development tools and Programming Language](https://github.com/StrongerProgrammer7/SmartContractPatients/blob/main/README.md#development-tools-and-programming-language)  
+[Prototype architecture](https://github.com/StrongerProgrammer7/SmartContractPatients/blob/main/README.md#prototype-architecture)  
+[Optimization contract](https://github.com/StrongerProgrammer7/SmartContractPatients/blob/main/README.md#optimization-contract) 
+[Some problem and TODO:](https://github.com/StrongerProgrammer7/SmartContractPatients/blob/main/README.md#some-problem-and-todo)  
+[View Prototype](https://github.com/StrongerProgrammer7/SmartContractPatients/blob/main/README.md#-view-prototype-)  
 
 
 <div align="center">
