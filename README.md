@@ -1,10 +1,18 @@
-<sub>**This work was done as part of the Course work**</sub>
+<sub>**This work was done as part of the Course work by Author: Abdyukov Z.M. **</sub> 
+<h3>Content</h3>
+
+[Brief introduction](https://github.com/StrongerProgrammer7/SmartContractPatients/edit/main/README.md#optimization-contract)  
+[Development tools and Programming Language](https://github.com/StrongerProgrammer7/SmartContractPatients/edit/main/README.md#development-tools-and-programming-language)  
+[Prototype architecture](https://github.com/StrongerProgrammer7/SmartContractPatients/edit/main/README.md#prototype-architecture)  
+[Optimization contract](https://github.com/StrongerProgrammer7/SmartContractPatients/edit/main/README.md#optimization-contract)  
+[Some problem and TODO:](https://github.com/StrongerProgrammer7/SmartContractPatients/edit/main/README.md#some-problem-and-todo)  
+[View Prototype](https://github.com/StrongerProgrammer7/SmartContractPatients/edit/main/README.md#-view-prototype-)  
+
 
 <div align="center">
 <h1>Smart contract EHTEREUM:</h1>
 <h2>Interaction Patient with Doctor </h2>
 </div>
-
 <div>
 <h3 align="center"> Brief introduction </h3>
  <p>The main goal of the work is to develop the architecture and prototype of a system of decentralized interaction between doctors and patients.<br><br>
@@ -35,7 +43,7 @@ The scientific novelty of the work lies in the fact that a new approach to the i
 <div>
 <h3 align="center">Optimization contract</h3>
 <p align="justify"> The developed prototype works with two contracts, with the contract of the patient <b>(Patient)</b> and the contract that interacts with the contract of the patient <b>(addPatient)</b>. The patient contract stores and processes data about a particular patient, and the patient does not have direct access to this contract. The second contract allows the patient to interact with the patient contract. Thus, each patient will have his own separate contract.</p>
-  <p align="justify">Since each patient has his own personal contract, it puts a lot of pressure on the system and is quite an expensive operation. In this regard, the concept of "Clone Factory" from OpenZepplin is used, this library allows you to reduce the load on the system and reduce costs. It turns out this is due to the fact that the library works in the Assembly language, which directly works with memory. The essence of the library is that the patient's contract is first deployed, and then the main contract, which will create clones. Clones simply refer to the functions of the parent, thereby reducing their volume and increasing the processing speed, while each clone stores its own patient data</p>
+  <p align="justify">Since each patient has his own personal contract, it puts a lot of pressure on the system and is quite an expensive operation. <b>In this regard, the concept of "Clone Factory" from OpenZepplin is used</b>, this library allows you to reduce the load on the system and reduce costs. It turns out this is due to the fact that the library works in the Assembly language, which directly works with memory. The essence of the library is that the patient's contract is first deployed, and then the main contract, which will create clones. Clones simply refer to the functions of the parent, thereby reducing their volume and increasing the processing speed, while each clone stores its own patient data</p>
 <p align="justify">
     The contract also contains a function that converts an integer to a string. This function requires optimization, since the cost is high for large numbers, and the larger the number, the higher the cost <b>(for example, for 9997779 the cost is 42676 gas).</b> After the translation of the function into the Assembly language, the cost of the function has significantly decreased and with an increase in the number, it does not increase significantly (for example, for the same number the cost is already equal to <b>24576 gas</b> and with an increase in the number, the cost increases by only a few hundred, against several thousand)
 </p>
@@ -44,11 +52,22 @@ The scientific novelty of the work lies in the fact that a new approach to the i
 <div>
 <h3 align="center">Some problem and TODO:</h3>
 <p align="justify">
-      The first problem is the limited size of the contract. The developers of the Ethereum network and smart contracts have limited the size of contracts, which does not allow adding a lot of functionality. The maximum contract size is 24576 bytes, you can also use the built-in optimizer, but they also have a "too deep stack" limit of no more than 16 local variables. This was done in order to prevent DDos attacks. It is also possible to optimize the contract if it is translated into the Assembly (Assembler) language, but the developers strongly do not recommend it, since in this case there is work with memory, as a result of which it can cause problems in the Ethereum network. As a result, a smart contract can only be used with little functionality and a limited number of checks in the contract itself.</p>
-<p align="justify">The second problem is that the contract is too expensive. The write functions are not expensive, but the display functions have nested loops, which greatly increases the price of the contract. So, for example, displaying one diagnosis costs 35,000 gas, if there are already two, then 70,000 gas. But I also note that the Ethereum network switched to “ProofOfStake” in the fall of 2022, perhaps next year the cost of computing will fall, and the contract will become cheaper.</p>
-<p align="justify">The third problem is file storage. About 75 million people use cloud storage. Part of the campaign, another part uses intentionally, and still others only indirectly. The rest may not know about it, because there is simply no need. IPFS, on the other hand, is still a very young technology that requires development, testing and implementation to the masses (for example, a default installation along with the OS). As a result, the use of IPFS as a storage is not very advisable in the near future, since in addition to those mentioned above, there are few users, and, therefore, the data will be loaded for a long time, and the receipt can also be long.</p>
-<p align="justify">Also, the developed application is only partially decentralized, as it works on the basis of a central node - a server. For an application to be fully decentralized, the contract must be published to IPFS and the application deployed to a distributed file system. Only in this case, the dependence on the central node will disappear and the application will be truly decentralized.</p>
-<p align="justify">For a prototype of a system for decentralized interaction between a doctor and a patient, contract optimization is required, it may be worth reviewing some functionality, or studying the solc package compiler, on the basis of which solidity works, also optimize in terms of gas costs, adapt the site for mobile devices and possibly develop an application for mobile devices on Android OS.</p>
+      The first problem is <b>the limited size of the contract</b>. The developers of the Ethereum network and smart contracts have limited the size of contracts, which does not allow adding a lot of functionality. <b>The maximum contract size is 24576 bytes</b>, you can also use the built-in optimizer, but they also have a "too deep stack" limit of no more than 16 local variables. This was done in order to prevent DDos attacks. It is also possible to optimize the contract if it is translated into the Assembly (Assembler) language, but the developers strongly do not recommend it, since in this case there is work with memory, as a result of which it can cause problems in the Ethereum network. As a result, a smart contract can only be used with little functionality and a limited number of checks in the contract itself.</p>
+<p align="justify">The second problem is that the contract is <b>too expensive</b>. The write functions are not expensive, but the display functions have nested loops, which greatly increases the price of the contract. <b>So, for example, displaying one diagnosis costs 35,000 gas, if there are already two, then 70,000 gas.</b> But I also note that the Ethereum network switched to “ProofOfStake” in the fall of 2022, perhaps next year the cost of computing will fall, and the contract will become cheaper.</p>
+<p align="justify">The third problem is file storage. About 75 million people use cloud storage. Part of the campaign, another part uses intentionally, and still others only indirectly. The rest may not know about it, because there is simply no need. IPFS, on the other hand, is still a very young technology that requires development, testing and implementation to the masses (for example, a default installation along with the OS).<b> As a result, the use of IPFS as a storage is not very advisable in the near future, since in addition to those mentioned above, there are few users, and, therefore, the data will be loaded for a long time, and the receipt can also be long.</b></p>
+<p align="justify">Also, <b>the developed application is only partially decentralized, as it works on the basis of a central node - a server.</b> For an application to be fully decentralized, the contract must be published to IPFS and the application deployed to a distributed file system. Only in this case, the dependence on the central node will disappear and the application will be truly decentralized.</p>
+<h4>TODO: </h4>
+
++ 1. Contract optimization: learn Solc and apply
+
++ 2. WebSite optimization (the main page slows down)
+
++ 3. WebSite: remove jQuery (only used for slider), manually create slider
+
++ 4. Test on large volumes of data
+
++ 5. In case of successful solution of the problems above, create an Android App
+
 </div>
 <div>
 <h3 align="center"> View Prototype </h3>
