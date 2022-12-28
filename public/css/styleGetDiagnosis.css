@@ -1,0 +1,308 @@
+/* --------------- reset.css --------------- */
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, em, img, strong, sub, sup, b, u, i,  dl, dt, dd, ol, ul, li, fieldset, form, label, table, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;                               /* обнуляем отступы и убираем бордюры */
+	vertical-align: baseline;          /* приводим все к одной базовой линии */
+	background: transparent;      /* чтобы не проскакивали левые фоны, установленные по умолчанию */
+	font-size: 100%;                     /* размер шрифта всем одинаковый */
+}
+/*a {                                      	     /* ссылка не в общем списке чтобы не сбрасывать outline по умолчанию */
+	/*margin:0;
+	padding:0;
+	font-size:100%;
+	vertical-align:baseline;
+	background:transparent;
+	outline:none;
+}*/
+table {						/* устраняем отступы между ячейками таблицы */
+	border-collapse: collapse; 
+	border-spacing: 0;
+}
+td, td img {
+	vertical-align: top;			/* возвращаем привычное вертикальное выравнивание */
+} 
+input, select, button, textarea {
+	margin: 0; 				/* убираем отступы по умолчанию для элементов форм (в частности для checkbox и radio) */
+	font-size: 100%; 			/* делаем размер шрифтов везде одинаковым */
+	outline: none;
+}
+input[type="password"], textarea {
+	padding: 0; 				/* убираем внутренние отступы для текстовых полей */
+}
+input[type="checkbox"] { 		/* вертикальное выравнивание чекбоксов и радиобатонов относительно меток */
+	vertical-align: bottom;
+}
+input[type="radio"] {
+	vertical-align: text-bottom;
+}
+sub {
+	vertical-align: sub;
+	font-size: smaller;
+}
+sup {
+	vertical-align: super;
+	font-size: smaller;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display:block;
+}
+nav ul {
+	 list-style:none;
+}
+/* --------------- /reset.css --------------- */
+
+/* --------------- базовые настройки ---------*/
+html {
+	min-height:100%; /* всегда показываем вертикальную полосу прокрутки  */
+
+}
+body {
+	color: #7e7f84;
+	text-align: left;
+	font-size: 1em; /* используем безопасные шрифтовые CSS стеки */
+	min-height:100%;
+    font-family: 'Open Sans', sans-serif;
+    /*overflow-x: hidden;*/
+
+}
+a, a:visited { /* порядок правил для ссылок имеет значение */
+	
+	text-decoration: underline;
+}
+a:hover {
+	color: #9daeb6;
+	text-decoration:none;
+}
+a:focus, a:active {
+	text-decoration: none;
+}
+h1, h2, h3, h4, h5, h6{
+	font-weight:normal;
+}
+
+.clr{
+	clear:both;
+}
+.clearfix:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+/* --------------- /базовые настройки ---------*/
+* {
+    box-sizing: border-box;
+  }
+
+  
+body
+{
+    background-image: url("../image/doc.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size:cover;
+    background-position:center;
+
+}
+
+.name
+{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+
+/*---------------------navigation ---------------------------*/
+.navigationPanel-header {
+  height: 70px;
+  width: 100%;
+  background-color: #1f1e1e;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  
+}
+
+.navigationPanel-header__links label input
+{
+  display: none;
+ /* position: relative;
+  right: 58px;*/
+}
+.navigationPanel-header__links label span
+{
+  height: 12px;
+  width: 12px;
+  display: inline-block;
+  position: absolute;
+  background-color:#1f1e1e;
+  border-radius:2px;
+  padding:3px;
+  top:50px;
+  right:55px;
+}
+
+.navigationPanel-header__links label input[type=checkbox]:checked + span:before 
+{
+  /* <-- ставим иконку, когда чекбокс включен  */
+  content: '\2714';
+  font-size:25px;
+  color:rgb(0, 185, 0);
+  position:relative;
+  top:-20px;
+  right:2px;
+}
+
+
+  
+  .navigationPanel-header > .navigationPanel-header__text 
+  {
+    display: inline;
+  }
+  
+  .navigationPanel-header > .navigationPanel-header__text > .navigationPanel-header__title 
+  {
+    display: inline-block;
+    font-size: 22px;
+    color: #fff;
+    padding: 10px 10px 10px 10px;
+  }
+  
+  .navigationPanel-header > .navigationPanel-header__button 
+  {
+    display: none;
+
+  }
+  
+  .navigationPanel-header > .navigationPanel-header__links 
+  {
+    display: inline;
+    font-size: 18px;
+  }
+  
+  .navigationPanel-header > .navigationPanel-header__links > a 
+  {
+    display: inline-block;
+    padding: 13px 10px 13px 10px;
+    text-decoration: none;
+    color: #efefef;
+  }
+  
+  .navigationPanel-header > .navigationPanel-header__links > a:hover
+  {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  
+  .navigationPanel-header > #navigationPanel-header__inputCheck 
+  {
+    display: none;
+  }
+  
+  @media (max-width:790px) 
+  {
+    .navigationPanel-header__button
+    {
+      cursor: pointer;
+    }
+    .navigationPanel-header > .navigationPanel-header__button 
+    {
+      display: inline-block;
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      cursor: pointer;
+    }
+    .navigationPanel-header > .navigationPanel-header__button > label 
+    {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      padding: 13px;
+      cursor: pointer;
+    }
+    .navigationPanel-header > 
+    .navigationPanel-header__button > label:hover,.nav  #navigationPanel-header__inputCheck:checked ~ .navigationPanel-header__button > label 
+    {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+    .navigationPanel-header > .navigationPanel-header__button > label > span {
+      display: block;
+      width: 25px;
+      height: 10px;
+      border-top: 2px solid #eee;
+    }
+    .navigationPanel-header > .navigationPanel-header__links 
+    {
+      position: absolute;
+      display: block;
+      width: 100%;
+      background-color: #333;
+      height: 0px;
+      transition: all 0.3s ease-in;
+      overflow-y: hidden;
+      top: 50px;
+      left: 0px;
+    }
+    .navigationPanel-header > .navigationPanel-header__links > a 
+    {
+      display: block;
+      width: 100%;
+    }
+    .navigationPanel-header > #navigationPanel-header__inputCheck:not(:checked) ~ .navigationPanel-header__links 
+    {
+      height: 0px;
+    }
+    .navigationPanel-header > #navigationPanel-header__inputCheck:checked ~ .navigationPanel-header__links 
+    {
+      height: calc(100vh - 50px);
+      overflow-y: auto;
+    }
+  }
+
+
+/*------------------end navigation ------------------------*/
+
+.twoBlocks
+{
+    display: flex;
+    justify-content: space-around;
+    padding: 1em;
+   
+}
+
+  .wrapper 
+  {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 400px;
+
+    color: #444;
+
+    align-items: start;
+
+  }
+  .wrapper div a
+  {
+    overflow-wrap:break-word;
+  }
+
+  .box 
+  {
+    background-color: #444;
+    color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 150%;
+
+  }
+
+  /*.a 
+  {
+    grid-column: 1 ;
+    grid-row: 1;
+  }*/
+  

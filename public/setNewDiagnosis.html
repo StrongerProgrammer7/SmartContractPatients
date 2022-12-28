@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styleRegister.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    
+    <script type="text/javascript" type="text/javascript" src="/js/ABIandAddress.js" defer></script>
+    <script type="text/javascript" type="text/javascript" src="/js/setDiagnos.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.8.0/web3.min.js"></script>
+    <title>Set Diagnos</title>
+</head>
+<body>
+  <header class="navigationPanel-header">
+    <input type="checkbox" id="navigationPanel-header__inputCheck">
+    <div class="navigationPanel-header__text">
+      <div class="navigationPanel-header__title">
+        Смарт-контракт: Пациент
+      </div>
+    </div>
+    <div class="navigationPanel-header__button">
+      <label for="navigationPanel-header__inputCheck">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+    </div>
+    <div class="navigationPanel-header__links">
+      <a href="/" target="_blank" id="home">На главную</a>
+    </div>
+  </header>
+
+      <div class="container-fluid text-center">
+        <div>
+            <h1 style="display:inline">Установить диагноз </h1>
+            <p style="display:inline" id="dataDiags">s</p>
+        </div>
+        
+        <div class="d-flex h-100 justify-content-center align-items-center p-0">
+        <form id="formElem" class="justify-content-sm-center">
+            <div class="row justify-content-sm-center">
+                <div class="mb-3 col-sm-4">
+                    <label for="diagnos" class="form-label">Название диагноза</label>
+                    <input type="text" class="form-control" id="diagnos" required value="Diagnos">
+                  </div>
+                  <div class="mb-2 col-sm-4">
+                      <label for="NS_doctor" class="form-label">ФИО Доктора</label>
+                      <input type="text" class="form-control" id="NS_doctor" required placeholder="name surname doctor" value="doctor">
+                    </div>
+                    <div class="mb-2 col-sm-8">
+                      <label for="infoDiagnos" class="form-label">Информация о диагнозе</label>
+                      <textarea type="text" class="form-control" id="infoDiagnos" placeholder="more information" >Info</textarea>
+                    </div>
+                    <div class="mb-2 col-sm-8">
+                      <label for="treatment" class="form-label">Лечение</label>
+                      <textarea type="text" class="form-control" id="treatment" required>Treatment</textarea>
+                    </div>
+                    <!--<div class="mb-2">
+                      <label for="dataDiag" class="form-label">Data diagnos</label>
+                      <input  type="date" class="form-control text-center" id="dataDiag" disabled>
+                    </div>-->
+                  <div class="mb-2 col-sm-5">
+                    <label for="meta" class="form-label">Аккаунт врача</label>
+                    <input type="text" class="form-control" id="meta" required disabled>
+                  </div>
+                  <div class="mb-2 col-sm-5">
+                    <label for="patient" class="form-label">Аккаунт пациента</label>
+                    <input type="text" class="form-control" id="patient" required>
+                  </div>
+                  <div class="mb-2 col-sm-6">
+                    <label for="fileName" class="form-label">Общее название файла</label>
+                    <input type="text" class="form-control" id="fileName" value="fileName">
+                    <input type="file" class="form-control" name="file" id="files" multiple>
+                    <p class="warning">Общее название можно не указывать</p>
+                    <label for="statusIll" class="form-label mt-3">Статус пациента</label>
+                    <input type="text" class="form-control" id="statusIll" required placeholder="Болеет/Здоров" value="Ill">
+                  </div>
+            </div>         
+            <button type="submit" class="btn btn-info mt-3 p-3" id="btn-open-form" style="color:wheat">Set diagnos!</button>
+        </form>
+      </div>
+    </div>
+    <div class="alert alert-danger" role="alert" id="error" style="display:none;">Ошибка</div>
+    <div class="alert alert-success" role="alert" id="success" style="display:none;">Успех!</div>
+</body>
+</html>

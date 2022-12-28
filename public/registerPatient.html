@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styleRegister.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.8.0/web3.min.js"></script>
+    <script type="text/javascript" type="text/javascript" src="/js/ABIandAddress.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.8.0/web3.min.js"></script>
+    <title>Add users</title>
+</head>
+<body>
+  <header class="navigationPanel-header">
+    <input type="checkbox" id="navigationPanel-header__inputCheck">
+    <div class="navigationPanel-header__text">
+      <div class="navigationPanel-header__title">
+        Смарт-контракт: Пациент
+      </div>
+    </div>
+    <div class="navigationPanel-header__button">
+      <label for="navigationPanel-header__inputCheck">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+    </div>
+    <div class="navigationPanel-header__links">
+      <a href="/" target="_blank" id="home">На главную</a>
+    </div>
+  </header>
+
+      <div class="container-fluid text-center" id="title">
+        <h1 id="">Регистрация</h1>
+      <div class="d-flex h-100 justify-content-center align-items-center p-0">
+      <form onsubmit="return false;" id="form" class="col-md-3 center">
+        <div class="mb-2">
+          <label for="nameId" class="form-label">Имя</label>
+          <input type="text" class="form-control" id="nameId" required value="Bob">
+          <p class="warning">Не используйте пробел или спец символы</p>
+        </div>
+        <div class="mb-2">
+            <label for="surnameId" class="form-label">Фамилия</label>
+            <input type="text" class="form-control" id="surnameId" required value="Falcon">
+            <p class="warning">Не используйте пробел или спец символы</p>
+          </div>
+          <div class="mb-2">
+            <label for="lastnameId" class="form-label">Lastname</label>
+            <input type="text" class="form-control" id="lastnameId">
+            <p class="warning">Если есть отчество: <br>Не используйте пробел или спец символы</p>
+          </div>
+          <div class="mb-3">
+            <label for="addressOfResidence" class="form-label">Адрес проживания</label>
+            <input type="text" class="form-control" id="addressOfResidence" required value="Krasnodar">
+          </div>
+          <div class="mb-3">
+            <label for="addressRegistered" class="form-label">Адрес по прописке</label>
+            <input type="text" class="form-control" id="addressRegistered" required value="Moscow">
+          </div>
+          <div class="mb-3">
+            <label for="insurancePolicy" class="form-label">Страховой полис</label>
+            <input type="text" class="form-control" id="insurancePolicy" required value="195-1586-649-649">
+          </div>
+        <div class="mb-3">
+          <label for="bdateId" class="form-label">Дата рождения</label>
+          <input type="date" class="form-control text-center" id="bdateId" required value="2018-06-22">
+        </div>
+        <div class="mb-3">
+          <label for="meta" class="form-label">Ваш аккаунт</label>
+          <input type="text" class="form-control" id="meta" disabled>
+        </div>
+        <button type="submit" class="btn btn-info" id="btn-open-form" style="color:wheat">Зарегистрироваться!</button>
+      </form>
+    </div>
+  </div>
+    <div class="alert alert-danger" role="alert" id="error" style="display:none;">Ошибка</div>
+    <div class="alert alert-success" role="alert" id="success" style="display:none;">Успех!</div>
+
+    <script src="/js/register.js" defer></script>  
+
+</body>
+</html>
